@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'PageViewerManager.dart';
-import 'Television.dart';
+
 
 class Led extends StatelessWidget {
+  int zahl=2;
+
+  Led(this.zahl);
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +15,17 @@ class Led extends StatelessWidget {
         title: Text('Led'),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text("Add Television"),
-          onPressed: (){
-            addPages(Television());
-          },
-        ) ,
-
+        child: Column(
+          children: [
+            Text(zahl.toString()),
+            ElevatedButton(
+              child: Text("Add Television"),
+              onPressed: (){
+                addTelevision();
+              },
+            ) ,
+          ],
+        )
       ),
     );
   }

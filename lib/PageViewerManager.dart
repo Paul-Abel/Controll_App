@@ -3,10 +3,17 @@ import 'package:flutter/material.dart';
 import 'Led.dart';
 import 'Television.dart';
 
-List<StatelessWidget> myPages = [Led(), Television(), Led(), Led()];
+List<StatelessWidget> myPages = [Led(0), Television(1),];
+int pageCounter = 0;
 
-void addPages(StatelessWidget page){
-  myPages.add(page);
+void addLed(){
+  pageCounter++;
+  myPages.add(Led(pageCounter));
+}
+
+void addTelevision(){
+  pageCounter++;
+  myPages.add(Television(pageCounter));
 }
 
 class PageViewerManager extends StatefulWidget{
